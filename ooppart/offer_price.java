@@ -1,8 +1,4 @@
-package ooppart;
-
-
 import java.util.ArrayList;
-
 
 public class offer_price {
     private String note;
