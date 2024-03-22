@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class offer_price {
     private String note;
     private Project project;
+    private String status;
     private ArrayList<Goods>goods = new ArrayList<Goods>();
     
     public void setNote(String note) {
@@ -19,6 +20,14 @@ public class offer_price {
     
     public Project getProject() {
         return this.project;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getStatus() {
+        return this.status
     }
     
     public void addGoods(String name, double price, String goodsID, int count) {
