@@ -3,10 +3,11 @@ public class Employee {
     private String name;
     private int project_handel;
 
-    public void Employee(String name, int project_handel) {
+    public void Employee(String name) {
         this.name = name;
-        this.project_handel = project_handel;
+        this.project_handle = 0;
     }
+    
     public void setName(String name) {
         this.name = name;
     }
