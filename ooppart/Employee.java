@@ -3,6 +3,10 @@ public class Employee {
     private String name;
     private int project_handel;
 
+    public void Employee(String name, int project_handel) {
+        this.name = name;
+        this.project_handel = project_handel;
+    }
     public void setName(String name) {
         this.name = name;
     }
