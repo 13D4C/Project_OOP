@@ -328,11 +328,11 @@ public class Home extends javax.swing.JFrame{
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        try {
+        /*try {
     UIManager.setLookAndFeel( new FlatLightLaf() );
 } catch( Exception ex ) {
     System.err.println( "Failed to initialize LaF" );
-}
+}*/
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
