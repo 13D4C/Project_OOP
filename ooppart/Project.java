@@ -19,6 +19,14 @@ public class Project {
     public Employee getEmployee() {
         return this.employee;
     }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+    
+    public String getCustomerName() {
+        return this.customerName;
+    }
     public void setPrice(double price) {
         this.price = price;
     } 
