@@ -4,6 +4,13 @@ public class Goods {
     private double price;
     private String goods_ID;
     private int count;
+
+    public Goods(String name, double price, String goodsID, int count) {
+        this.name = name;
+        this.price = price;
+        this.goods_ID = goodsID;
+        this.count = count;
+    }
     
     public void setName(String name) {
         this.name = name;
