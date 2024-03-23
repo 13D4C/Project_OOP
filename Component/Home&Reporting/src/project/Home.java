@@ -43,20 +43,20 @@ public class Home extends javax.swing.JFrame{
         NavBarHome = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         usethisDashboard = new javax.swing.JLabel();
-        Home = new javax.swing.JButton();
-        Reporting = new javax.swing.JButton();
-        Users = new javax.swing.JButton();
-        SettingButton = new javax.swing.JButton();
         Logo = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
-        TaxButton = new javax.swing.JButton();
         UserName = new javax.swing.JLabel();
         EmailUser = new javax.swing.JLabel();
         BottomProfileUserHome = new javax.swing.JLabel();
-        Project1 = new javax.swing.JButton();
         DocumentButton = new javax.swing.JPanel();
         IconDocument = new javax.swing.JLabel();
         DocumentCombobox = new javax.swing.JComboBox<>();
+        jButtonProject = new javax.swing.JButton();
+        jbuttonReporting = new javax.swing.JButton();
+        jButtonUser = new javax.swing.JButton();
+        jButtonTax = new javax.swing.JButton();
+        jButtonSetting = new javax.swing.JButton();
+        jButtonHome = new javax.swing.JButton();
         HomeDashboard = new javax.swing.JPanel();
         WelcomebackUsername = new javax.swing.JLabel();
         HereWhatGoing = new javax.swing.JLabel();
@@ -99,82 +99,10 @@ public class Home extends javax.swing.JFrame{
         usethisDashboard.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         usethisDashboard.setText("Usethis Dashboard");
 
-        Home.setBackground(new java.awt.Color(224, 227, 232));
-        Home.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        Home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/iconoir_home-simple-door.png"))); // NOI18N
-        Home.setText("   Home");
-        Home.setBorderPainted(false);
-        Home.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Home.setMaximumSize(new java.awt.Dimension(342, 966));
-        Home.setPreferredSize(new java.awt.Dimension(966, 342));
-        Home.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                HomeMouseClicked(evt);
-            }
-        });
-        Home.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HomeActionPerformed(evt);
-            }
-        });
-
-        Reporting.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        Reporting.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/iconoir_stats-report.png"))); // NOI18N
-        Reporting.setText("   Reporting");
-        Reporting.setBorderPainted(false);
-        Reporting.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Reporting.setMaximumSize(new java.awt.Dimension(342, 966));
-        Reporting.setPreferredSize(new java.awt.Dimension(966, 342));
-        Reporting.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ReportingActionPerformed(evt);
-            }
-        });
-
-        Users.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        Users.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/iconoir_user-square.png"))); // NOI18N
-        Users.setText("   Users");
-        Users.setBorderPainted(false);
-        Users.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Users.setMaximumSize(new java.awt.Dimension(342, 966));
-        Users.setPreferredSize(new java.awt.Dimension(966, 342));
-        Users.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsersActionPerformed(evt);
-            }
-        });
-
-        SettingButton.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        SettingButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/iconoir_settings.png"))); // NOI18N
-        SettingButton.setText("  Setting");
-        SettingButton.setBorderPainted(false);
-        SettingButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        SettingButton.setMaximumSize(new java.awt.Dimension(342, 966));
-        SettingButton.setPreferredSize(new java.awt.Dimension(966, 342));
-        SettingButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SettingButtonActionPerformed(evt);
-            }
-        });
-
         Logo.setIcon(new javax.swing.ImageIcon("D:\\OOP JAVA LAB\\Project\\src\\image\\Logo.png.png")); // NOI18N
 
         jSeparator2.setBackground(new java.awt.Color(136, 136, 136));
         jSeparator2.setForeground(new java.awt.Color(136, 136, 136));
-
-        TaxButton.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        TaxButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/iconoir_calculator.png"))); // NOI18N
-        TaxButton.setText("   Tax");
-        TaxButton.setToolTipText("");
-        TaxButton.setBorderPainted(false);
-        TaxButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        TaxButton.setMaximumSize(new java.awt.Dimension(342, 966));
-        TaxButton.setPreferredSize(new java.awt.Dimension(966, 342));
-        TaxButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TaxButtonActionPerformed(evt);
-            }
-        });
 
         UserName.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         UserName.setText("Username");
@@ -183,19 +111,6 @@ public class Home extends javax.swing.JFrame{
         EmailUser.setText("Email");
 
         BottomProfileUserHome.setIcon(new javax.swing.ImageIcon("D:\\OOP JAVA LAB\\Project\\src\\image\\Ellipse 2 (1).png")); // NOI18N
-
-        Project1.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        Project1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/iconoir_app-window.png"))); // NOI18N
-        Project1.setText("    Project");
-        Project1.setBorderPainted(false);
-        Project1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Project1.setMaximumSize(new java.awt.Dimension(342, 966));
-        Project1.setPreferredSize(new java.awt.Dimension(966, 342));
-        Project1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Project1ActionPerformed(evt);
-            }
-        });
 
         DocumentButton.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -218,7 +133,7 @@ public class Home extends javax.swing.JFrame{
                 .addGap(15, 15, 15)
                 .addComponent(IconDocument)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(DocumentCombobox, 0, 255, Short.MAX_VALUE))
+                .addComponent(DocumentCombobox, 0, 269, Short.MAX_VALUE))
         );
         DocumentButtonLayout.setVerticalGroup(
             DocumentButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,6 +146,73 @@ public class Home extends javax.swing.JFrame{
                         .addComponent(IconDocument, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
+        jButtonProject.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jButtonProject.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/iconoir_app-window.png"))); // NOI18N
+        jButtonProject.setText("  Project");
+        jButtonProject.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jButtonProject.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButtonProject.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonProjectActionPerformed(evt);
+            }
+        });
+
+        jbuttonReporting.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jbuttonReporting.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/iconoir_stats-report.png"))); // NOI18N
+        jbuttonReporting.setText("  Reporting");
+        jbuttonReporting.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jbuttonReporting.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jbuttonReporting.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbuttonReportingActionPerformed(evt);
+            }
+        });
+
+        jButtonUser.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jButtonUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/iconoir_user-square.png"))); // NOI18N
+        jButtonUser.setText("  Users");
+        jButtonUser.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jButtonUser.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButtonUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonUserActionPerformed(evt);
+            }
+        });
+
+        jButtonTax.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jButtonTax.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/iconoir_calculator.png"))); // NOI18N
+        jButtonTax.setText("  Tax");
+        jButtonTax.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jButtonTax.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButtonTax.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonTaxActionPerformed(evt);
+            }
+        });
+
+        jButtonSetting.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jButtonSetting.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/iconoir_settings.png"))); // NOI18N
+        jButtonSetting.setText("  Setting");
+        jButtonSetting.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jButtonSetting.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButtonSetting.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSettingActionPerformed(evt);
+            }
+        });
+
+        jButtonHome.setBackground(new java.awt.Color(224, 227, 232));
+        jButtonHome.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jButtonHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/iconoir_home-simple-door.png"))); // NOI18N
+        jButtonHome.setText("  Home");
+        jButtonHome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jButtonHome.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButtonHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonHomeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout NavBarHomeLayout = new javax.swing.GroupLayout(NavBarHome);
         NavBarHome.setLayout(NavBarHomeLayout);
         NavBarHomeLayout.setHorizontalGroup(
@@ -238,31 +220,35 @@ public class Home extends javax.swing.JFrame{
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(jSeparator2)
             .addGroup(NavBarHomeLayout.createSequentialGroup()
-                .addGroup(NavBarHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(NavBarHomeLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(usethisDashboard))
-                    .addGroup(NavBarHomeLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(BottomProfileUserHome, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(NavBarHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(UserName)
-                            .addComponent(EmailUser)))
-                    .addGroup(NavBarHomeLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addGroup(NavBarHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(DocumentButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(NavBarHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(Reporting, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                                .addComponent(Home, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                                .addComponent(SettingButton, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                                .addComponent(Project1, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                                .addComponent(TaxButton, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                .addComponent(Users, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addGroup(NavBarHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(NavBarHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, NavBarHomeLayout.createSequentialGroup()
+                            .addGap(31, 31, 31)
+                            .addComponent(Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(usethisDashboard))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, NavBarHomeLayout.createSequentialGroup()
+                            .addGap(28, 28, 28)
+                            .addComponent(BottomProfileUserHome, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(NavBarHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(UserName)
+                                .addComponent(EmailUser)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, NavBarHomeLayout.createSequentialGroup()
+                            .addGap(14, 14, 14)
+                            .addComponent(jButtonHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(DocumentButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(NavBarHomeLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(NavBarHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(NavBarHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jButtonProject, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jbuttonReporting, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
+                                .addComponent(jButtonUser, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(NavBarHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jButtonSetting, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonTax, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         NavBarHomeLayout.setVerticalGroup(
             NavBarHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -277,21 +263,21 @@ public class Home extends javax.swing.JFrame{
                         .addComponent(usethisDashboard)
                         .addGap(42, 42, 42)))
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(DocumentButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
-                .addComponent(Project1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Reporting, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Users, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(TaxButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 321, Short.MAX_VALUE)
-                .addComponent(SettingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(jButtonHome, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(DocumentButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonProject, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jbuttonReporting, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonUser, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonTax, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 269, Short.MAX_VALUE)
+                .addComponent(jButtonSetting, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(NavBarHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(NavBarHomeLayout.createSequentialGroup()
@@ -628,34 +614,6 @@ public class Home extends javax.swing.JFrame{
         pack();
     }// </editor-fold>                        
 
-    private void TaxButtonActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        // TODO add your handling code here:
-    }                                         
-
-    private void SettingButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        // TODO add your handling code here:
-    }                                             
-
-    private void UsersActionPerformed(java.awt.event.ActionEvent evt) {                                      
-        // TODO add your handling code here:
-    }                                     
-
-    private void ReportingActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        // TODO add your handling code here:
-    }                                         
-
-    private void HomeActionPerformed(java.awt.event.ActionEvent evt) {                                     
-        // TODO add your handling code here:
-    }                                    
-
-    private void HomeMouseClicked(java.awt.event.MouseEvent evt) {                                  
-        // TODO add your handling code here:
-    }                                 
-
-    private void Project1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
-    }                                        
-
     private void TextDarkblueActionPerformed(java.awt.event.ActionEvent evt) {                                             
         // TODO add your handling code here:
     }                                            
@@ -671,6 +629,30 @@ public class Home extends javax.swing.JFrame{
     private void TextRedActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
     }                                       
+
+    private void jButtonProjectActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        // TODO add your handling code here:
+    }                                              
+
+    private void jButtonSettingActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        // TODO add your handling code here:
+    }                                              
+
+    private void jButtonTaxActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+    }                                          
+
+    private void jButtonUserActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+    }                                           
+
+    private void jbuttonReportingActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+        // TODO add your handling code here:
+    }                                                
+
+    private void jButtonHomeActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+    }                                           
 
     /**
      * @param args the command line arguments
@@ -701,7 +683,6 @@ public class Home extends javax.swing.JFrame{
     private javax.swing.JPanel EmptyPanelTopLeft;
     private javax.swing.JPanel EmptyPanelTopRight;
     private javax.swing.JLabel HereWhatGoing;
-    private javax.swing.JButton Home;
     private javax.swing.JPanel HomeDashboard;
     private javax.swing.JPanel HomeMainPanel;
     private javax.swing.JLabel IconBellHome;
@@ -719,20 +700,21 @@ public class Home extends javax.swing.JFrame{
     private javax.swing.JPanel NumberPanelRed;
     private javax.swing.JLabel NumberUserHome;
     private javax.swing.JLabel ProfielUserHome;
-    private javax.swing.JButton Project1;
-    private javax.swing.JButton Reporting;
-    private javax.swing.JButton SettingButton;
-    private javax.swing.JButton TaxButton;
     private javax.swing.JTextField TextBlue;
     private javax.swing.JTextField TextDarkblue;
     private javax.swing.JTextField TextRed;
     private javax.swing.JPanel TopProfileHome;
     private javax.swing.JLabel UserName;
-    private javax.swing.JButton Users;
     private javax.swing.JLabel WelcomebackUsername;
+    private javax.swing.JButton jButtonHome;
+    private javax.swing.JButton jButtonProject;
+    private javax.swing.JButton jButtonSetting;
+    private javax.swing.JButton jButtonTax;
+    private javax.swing.JButton jButtonUser;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JButton jbuttonReporting;
     private javax.swing.JLabel usethisDashboard;
     // End of variables declaration                   
 
