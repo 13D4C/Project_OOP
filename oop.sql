@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 28, 2024 at 11:01 AM
+-- Generation Time: Mar 24, 2024 at 10:46 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -29,8 +29,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `login` (
   `key_Login` int(11) NOT NULL,
+  `NAME` varchar(255) NOT NULL,
   `Username` varchar(255) NOT NULL,
-  `Password` varchar(255) NOT NULL
+  `Password` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -44,7 +46,8 @@ CREATE TABLE `merchandise` (
   `Name_Merchandise` varchar(255) NOT NULL,
   `total_Merchandise` int(11) NOT NULL,
   `Cost_Merchandise` int(11) NOT NULL,
-  `Project_id` int(11) NOT NULL
+  `Project_id` int(11) NOT NULL,
+  `ID_Merchandise` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -73,7 +76,8 @@ CREATE TABLE `worker` (
   `key_worker` int(11) NOT NULL,
   `Name_Work` varchar(255) NOT NULL,
   `total_Project` int(11) NOT NULL,
-  `Project_idW` int(11) NOT NULL
+  `Project_idW` int(11) NOT NULL,
+  `Salary` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
