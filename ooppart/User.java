@@ -1,3 +1,4 @@
+package ooppart;
 public class User {
     
     private String name;
