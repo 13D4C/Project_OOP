@@ -139,12 +139,22 @@ public class Report extends javax.swing.JFrame {
         jButtonHome.setText("  Home");
         jButtonHome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jButtonHome.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButtonHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonHomeActionPerformed(evt);
+            }
+        });
 
         jButtonProject.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jButtonProject.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/iconoir_app-window.png"))); // NOI18N
         jButtonProject.setText("  Project");
         jButtonProject.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jButtonProject.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButtonProject.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonProjectActionPerformed(evt);
+            }
+        });
 
         jButtonReporting.setBackground(new java.awt.Color(224, 227, 232));
         jButtonReporting.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
@@ -152,6 +162,11 @@ public class Report extends javax.swing.JFrame {
         jButtonReporting.setText("  Reporting");
         jButtonReporting.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jButtonReporting.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButtonReporting.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonReportingActionPerformed(evt);
+            }
+        });
 
         jButtonUsers.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jButtonUsers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/iconoir_user-square.png"))); // NOI18N
@@ -159,18 +174,33 @@ public class Report extends javax.swing.JFrame {
         jButtonUsers.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jButtonUsers.setHideActionText(true);
         jButtonUsers.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButtonUsers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonUsersActionPerformed(evt);
+            }
+        });
 
         jButtonTax.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jButtonTax.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/iconoir_calculator.png"))); // NOI18N
         jButtonTax.setText("  Tax");
         jButtonTax.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jButtonTax.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButtonTax.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonTaxActionPerformed(evt);
+            }
+        });
 
         jButtonSetting.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jButtonSetting.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/iconoir_settings.png"))); // NOI18N
         jButtonSetting.setText("  Setting");
         jButtonSetting.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jButtonSetting.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButtonSetting.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSettingActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout NavBarPanelLayout = new javax.swing.GroupLayout(NavBarPanel);
         NavBarPanel.setLayout(NavBarPanelLayout);
@@ -513,6 +543,30 @@ public class Report extends javax.swing.JFrame {
     private void DocumentActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
     }                                        
+
+    private void jButtonUsersActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+    }                                            
+
+    private void jButtonTaxActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+    }                                          
+
+    private void jButtonProjectActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        // TODO add your handling code here:
+    }                                              
+
+    private void jButtonHomeActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+    }                                           
+
+    private void jButtonReportingActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+        // TODO add your handling code here:
+    }                                                
+
+    private void jButtonSettingActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        // TODO add your handling code here:
+    }                                              
 
     /**
      * @param args the command line arguments
