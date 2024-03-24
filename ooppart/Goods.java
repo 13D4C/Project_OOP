@@ -1,4 +1,4 @@
-
+package ooppart;
 public class Goods {
     private String name;
     private double price;
