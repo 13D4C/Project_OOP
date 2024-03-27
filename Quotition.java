@@ -14,12 +14,12 @@ import javax.swing.UIManager;
  *
  * @author asus
  */
-public class Receipt extends javax.swing.JFrame implements ActionListener{
+public class Quotition extends javax.swing.JFrame implements ActionListener{
 
     /**
      * Creates new form Quotition
      */
-    public Receipt() {
+    public Quotition() {
         initComponents();
     }
 
@@ -426,7 +426,8 @@ public class Receipt extends javax.swing.JFrame implements ActionListener{
                         .addGap(24, 24, 24)
                         .addComponent(detaillabel, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(detailtext))
+                        .addComponent(detailtext)
+                        .addGap(60, 60, 60))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap(50, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -549,7 +550,7 @@ public class Receipt extends javax.swing.JFrame implements ActionListener{
         );
 
         serielabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        serielabel.setText("QT202420002");
+        serielabel.setText("ใบเสร็จเสนอราคา");
 
         savebutton.setBackground(new java.awt.Color(51, 204, 0));
         savebutton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -557,7 +558,6 @@ public class Receipt extends javax.swing.JFrame implements ActionListener{
         savebutton.setText("บันทึกเอกสาร");
 
         headerlabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        headerlabel.setText("สร้างใบเสร็จรับเงิน");
 
         closebutton.setBackground(new java.awt.Color(255, 0, 51));
         closebutton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -611,17 +611,17 @@ public class Receipt extends javax.swing.JFrame implements ActionListener{
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(14, 14, 14)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         pack();
@@ -691,7 +691,7 @@ public class Receipt extends javax.swing.JFrame implements ActionListener{
         // TODO add your handling code here:
         Home registerForm = new Home();
         registerForm.setVisible(true);
-        closebutton.addActionListener(new Receipt());
+        closebutton.addActionListener(new Quotition());        
     }//GEN-LAST:event_closebuttonActionPerformed
 
     private void discounttextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_discounttextActionPerformed
@@ -713,7 +713,7 @@ public class Receipt extends javax.swing.JFrame implements ActionListener{
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Receipt().setVisible(true);
+                new Quotition().setVisible(true);
             }
         });
     }
