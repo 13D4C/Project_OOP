@@ -1,40 +1,35 @@
-
-import java.sql.ResultSet;
-import javax.swing.table.DefaultTableModel;
-import project.DBConnect;
-import project.Home;
-import project.ProjectUser;
-import project.UserDatabase;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+package project;
+import java.sql.ResultSet;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Tanono
+ * @author aruch
  */
-public class Quotation1 extends javax.swing.JFrame {
+public class Receipt extends javax.swing.JFrame {
 
     /**
-     * Creates new form Quotation1
+     * Creates new form Receipt
      */
-    public Quotation1() {
+    public Receipt() {
         initComponents();
         setLocationRelativeTo(null);
-        setExtendedState(Quotation1.MAXIMIZED_BOTH);
+        setExtendedState(Receipt.MAXIMIZED_BOTH);
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         jTable1.setTableHeader(null);
         try {
             DBConnect db = new DBConnect();
             ResultSet rs = null;
 
-            rs = db.getQuoteTable(UserDatabase.key);
+            rs = db.getReceipt(UserDatabase.key);
             while (rs.next()) {
                 String cus = rs.getString("customer");
                 String tel = rs.getString("telephone");
-                String projName = rs.getString("project_name");
+                String projName = rs.getString("receipt_name");
                 String status = rs.getString("status");
                 
                 Object[] rowData = {false, cus, tel, projName, status};
@@ -72,16 +67,14 @@ public class Quotation1 extends javax.swing.JFrame {
         DocumentButton = new javax.swing.JPanel();
         IconDocument = new javax.swing.JLabel();
         DocumentCombobox = new javax.swing.JComboBox<>();
-        HomeDashboard = new javax.swing.JPanel();
-        IconBellHome = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         TopProfileHome = new javax.swing.JPanel();
         ProfielUserHome = new javax.swing.JLabel();
         NumberUserHome = new javax.swing.JLabel();
         DateHomePanel = new javax.swing.JLabel();
-        IconBellHome1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        IconBellHome = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
@@ -297,10 +290,19 @@ public class Quotation1 extends javax.swing.JFrame {
                 .addGap(17, 17, 17))
         );
 
-        HomeDashboard.setBackground(new java.awt.Color(236, 239, 243));
+        jButton1.setBackground(new java.awt.Color(102, 204, 0));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Create New");
+        jButton1.setPreferredSize(new java.awt.Dimension(135, 39));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel1.setText("Quotation");
+        jLabel1.setText("Receipt");
 
         TopProfileHome.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -338,7 +340,7 @@ public class Quotation1 extends javax.swing.JFrame {
         DateHomePanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/circum_calendar-date.png"))); // NOI18N
         DateHomePanel.setText("Friday, July 10,2024");
 
-        IconBellHome1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/ph_bell.png"))); // NOI18N
+        IconBellHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/ph_bell.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -346,7 +348,7 @@ public class Quotation1 extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(IconBellHome1)
+                .addComponent(IconBellHome)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(DateHomePanel)
@@ -365,20 +367,9 @@ public class Quotation1 extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
-                        .addComponent(IconBellHome1)
+                        .addComponent(IconBellHome)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
-
-        jButton1.setBackground(new java.awt.Color(102, 204, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Create New");
-        jButton1.setPreferredSize(new java.awt.Dimension(135, 39));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -405,10 +396,10 @@ public class Quotation1 extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, "d", "d", "d", "dshtj"}
             },
             new String [] {
-                "", "", "", "", ""
+                "xxv", "null", "null", "null", "null"
             }
         ) {
             Class[] types = new Class [] {
@@ -420,6 +411,11 @@ public class Quotation1 extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setMinWidth(50);
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(50);
+            jTable1.getColumnModel().getColumn(0).setMaxWidth(50);
+        }
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -475,65 +471,38 @@ public class Quotation1 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout HomeDashboardLayout = new javax.swing.GroupLayout(HomeDashboard);
-        HomeDashboard.setLayout(HomeDashboardLayout);
-        HomeDashboardLayout.setHorizontalGroup(
-            HomeDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HomeDashboardLayout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addGroup(HomeDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(HomeDashboardLayout.createSequentialGroup()
-                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(32, Short.MAX_VALUE))
-                    .addGroup(HomeDashboardLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(HomeDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HomeDashboardLayout.createSequentialGroup()
-                                .addComponent(IconBellHome)
-                                .addGap(39, 39, 39)
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(68, 68, 68))))
-        );
-        HomeDashboardLayout.setVerticalGroup(
-            HomeDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HomeDashboardLayout.createSequentialGroup()
-                .addGroup(HomeDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(HomeDashboardLayout.createSequentialGroup()
-                        .addContainerGap(93, Short.MAX_VALUE)
-                        .addComponent(IconBellHome)
-                        .addGap(84, 84, 84))
-                    .addGroup(HomeDashboardLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(HomeDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addGroup(HomeDashboardLayout.createSequentialGroup()
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 776, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65))
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addComponent(NavBarHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(HomeDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(46, 46, 46)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24)))
+                .addGap(81, 81, 81))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(NavBarHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(HomeDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NavBarHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(94, 94, 94)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 776, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -596,20 +565,20 @@ public class Quotation1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Quotation1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Receipt.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Quotation1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Receipt.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Quotation1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Receipt.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Quotation1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Receipt.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Quotation1().setVisible(true);
+                new Receipt().setVisible(true);
             }
         });
     }
@@ -621,9 +590,7 @@ public class Quotation1 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> DocumentCombobox;
     private javax.swing.JLabel EmailUser;
     private javax.swing.JButton Home;
-    private javax.swing.JPanel HomeDashboard;
     private javax.swing.JLabel IconBellHome;
-    private javax.swing.JLabel IconBellHome1;
     private javax.swing.JLabel IconDocument;
     private javax.swing.JLabel Logo;
     private javax.swing.JPanel NavBarHome;

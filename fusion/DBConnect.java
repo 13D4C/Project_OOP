@@ -78,7 +78,31 @@ public class DBConnect {
         }
         return null;
     }
-
+    
+    public ResultSet getQuoteTable(String key) {
+        try {
+            PreparedStatement preS = con.prepareStatement("SELECT customer, telephone, project_name, status FROM quote WHERE quote_id = ?");
+            preS.setString(1, key);
+            ResultSet resultSet = preS.executeQuery();
+            return resultSet;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+    
+    public ResultSet getReceipt(String key) {
+        try {
+            PreparedStatement preS = con.prepareStatement("SELECT customer, telephone, receipt_name, status FROM receipt WHERE receipt_id = ?");
+            preS.setString(1, key);
+            ResultSet resultSet = preS.executeQuery();
+            return resultSet;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+    
     public ResultSet getQuote(String key) {
         try {
             PreparedStatement preS = con.prepareStatement("SELECT Waiting, Accepted, ProjectDone FROM quotation WHERE quotation_id = ?");

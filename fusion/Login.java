@@ -186,8 +186,8 @@ public class Login extends javax.swing.JFrame implements ActionListener{
             DBConnect db = new DBConnect();
             String key = db.getKey(name, pass);
             UserDatabase.key = key;
+            
             Home home = new Home();
-            jButton1.addActionListener(new Login());
             home.setVisible(true);
             dispose();
         }
@@ -198,7 +198,6 @@ public class Login extends javax.swing.JFrame implements ActionListener{
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Register registerForm = new Register();
-        jButton2.addActionListener(new Login());
         registerForm.setVisible(true);
         jButton2.addActionListener(new Login());
         dispose();
@@ -213,6 +212,14 @@ public class Login extends javax.swing.JFrame implements ActionListener{
 
             String sql = String.format("SELECT * FROM login WHERE Username = ? and Password = ?");
             rs = db.getLog(sql, name, pass);
+            if (rs.next()) {
+                if (rs.getString("Role").equals("onwer")) {
+                    UserDatabase.user = new Owner(rs.getString("name"), rs.getString("pass"), rs.getString("id"), rs.getString("Role"));
+                }
+                if (rs.getString("Role").equals("employee")) {
+                    UserDatabase.user = new Owner(rs.getString("name"), rs.getString("pass"), rs.getString("id"), rs.getString("Role"));
+                }
+            }
             return rs.next();
         }
         catch (Exception ex) {
