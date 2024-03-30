@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2024 at 10:42 AM
+-- Generation Time: Mar 30, 2024 at 05:43 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -63,16 +63,17 @@ INSERT INTO `item` (`item`, `sales`, `jan`, `feb`, `mar`, `apr`, `may`, `june`, 
 CREATE TABLE `login` (
   `key_Login` int(11) NOT NULL,
   `Username` varchar(255) NOT NULL,
-  `Password` varchar(255) NOT NULL
+  `Password` varchar(255) NOT NULL,
+  `Role` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `login`
 --
 
-INSERT INTO `login` (`key_Login`, `Username`, `Password`) VALUES
-(1, 'admin', '1234'),
-(2, 's', 'ssss');
+INSERT INTO `login` (`key_Login`, `Username`, `Password`, `Role`) VALUES
+(1, 'admin', '1234', 'owner'),
+(2, 'test', '123', 'employee');
 
 -- --------------------------------------------------------
 
@@ -207,6 +208,50 @@ INSERT INTO `quotation` (`Waiting`, `Accepted`, `ProjectDone`, `reminder`, `quot
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `quote`
+--
+
+CREATE TABLE `quote` (
+  `customer` text NOT NULL,
+  `telephone` text NOT NULL,
+  `project_name` text NOT NULL,
+  `status` text NOT NULL,
+  `quote_id` int(255) NOT NULL,
+  `id` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `quote`
+--
+
+INSERT INTO `quote` (`customer`, `telephone`, `project_name`, `status`, `quote_id`, `id`) VALUES
+('idl', '112231122', 'sdffdsgs', 'fgdfgdfg', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `receipt`
+--
+
+CREATE TABLE `receipt` (
+  `customer` text NOT NULL,
+  `telephone` text NOT NULL,
+  `receipt_name` text NOT NULL,
+  `status` text NOT NULL,
+  `receipt_id` int(255) NOT NULL,
+  `id` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `receipt`
+--
+
+INSERT INTO `receipt` (`customer`, `telephone`, `receipt_name`, `status`, `receipt_id`, `id`) VALUES
+('sfd', '1234', 'df', 'dfd', 1, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `worker`
 --
 
@@ -268,6 +313,20 @@ ALTER TABLE `project`
 ALTER TABLE `quotation`
   ADD PRIMARY KEY (`id`),
   ADD KEY `quotation_id` (`quotation_id`);
+
+--
+-- Indexes for table `quote`
+--
+ALTER TABLE `quote`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `quote_id` (`quote_id`);
+
+--
+-- Indexes for table `receipt`
+--
+ALTER TABLE `receipt`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `receipt_id` (`receipt_id`);
 
 --
 -- Indexes for table `worker`
@@ -343,6 +402,18 @@ ALTER TABLE `project`
 --
 ALTER TABLE `quotation`
   ADD CONSTRAINT `quotation_id` FOREIGN KEY (`quotation_id`) REFERENCES `login` (`key_Login`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `quote`
+--
+ALTER TABLE `quote`
+  ADD CONSTRAINT `quote_id` FOREIGN KEY (`quote_id`) REFERENCES `login` (`key_Login`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `receipt`
+--
+ALTER TABLE `receipt`
+  ADD CONSTRAINT `receipt_id` FOREIGN KEY (`receipt_id`) REFERENCES `login` (`key_Login`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `worker`
