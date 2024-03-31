@@ -1,7 +1,5 @@
 package project;
 
-
-
 import com.itextpdf.kernel.color.Color;
 import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -40,7 +38,7 @@ import javax.swing.table.TableModel;
  *
  * @author asus
  */
-public class Receipt extends javax.swing.JFrame implements ActionListener{
+public class Quotition extends javax.swing.JFrame implements ActionListener{
     private double totalmoney;
     private double discount;
     public void cal(){
@@ -48,9 +46,9 @@ public class Receipt extends javax.swing.JFrame implements ActionListener{
     }
 
     /**
-     * Creates new form Receipt
+     * Creates new form Quotition
      */
-    public Receipt() {
+    public Quotition() {
         initComponents();
     }
    
@@ -613,7 +611,7 @@ public class Receipt extends javax.swing.JFrame implements ActionListener{
         );
 
         serielabel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        serielabel.setText("Receipt");
+        serielabel.setText("Quotition");
 
         savebutton.setBackground(new java.awt.Color(51, 204, 0));
         savebutton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -808,12 +806,12 @@ public class Receipt extends javax.swing.JFrame implements ActionListener{
 
     private void savebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebuttonActionPerformed
         // TODO add your handling code here:
-        String path = "Receipt.pdf";
+        String path = "Quotition.pdf";
         PdfWriter pdfWriter = null;
         try {
             pdfWriter = new PdfWriter(path);
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(Receipt.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Quotition.class.getName()).log(Level.SEVERE, null, ex);
         }
         PdfDocument pdfDocument = new PdfDocument(pdfWriter);
         pdfDocument.setDefaultPageSize(PageSize.A4);
@@ -968,7 +966,7 @@ public class Receipt extends javax.swing.JFrame implements ActionListener{
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new Receipt().setVisible(true);
+                new Quotition().setVisible(true);
             }
         });
     }
