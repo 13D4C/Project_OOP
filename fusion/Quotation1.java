@@ -1,4 +1,4 @@
-
+package project;
 import java.sql.ResultSet;
 import javax.swing.table.DefaultTableModel;
 import project.DBConnect;
@@ -15,7 +15,7 @@ import project.UserDatabase;
  *
  * @author Tanono
  */
-public class Quotation1 extends javax.swing.JFrame {
+public class Quotation1 extends javax.swing.JFrame implements AddAble {
 
     /**
      * Creates new form Quotation1
@@ -653,4 +653,7 @@ public class Quotation1 extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JLabel usethisDashboard;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void addNew() {}
 }
