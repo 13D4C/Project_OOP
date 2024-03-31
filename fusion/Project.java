@@ -5,13 +5,15 @@
 
 package project;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author aruch
  */
-public class Project extends javax.swing.JFrame {
+public class Project extends javax.swing.JFrame implements ActionListener{
 
     /** Creates new form Project */
     public Project() {
@@ -363,7 +365,8 @@ public class Project extends javax.swing.JFrame {
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jToggleButton3)
                 .addGap(18, 18, 18)
@@ -377,7 +380,6 @@ public class Project extends javax.swing.JFrame {
                 .addGap(90, 90, 90)
                 .addComponent(jLabel25)
                 .addGap(62, 62, 62))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -391,8 +393,8 @@ public class Project extends javax.swing.JFrame {
                         .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jToggleButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 722, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -501,7 +503,7 @@ public class Project extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -535,16 +537,47 @@ public class Project extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void openQuotition() {
+    Quotition registerForm = new Quotition();
+    registerForm.setVisible(true);
+    }
+    
+    private void openReceipt() {
+    Receipt registerForm = new Receipt();
+    registerForm.setVisible(true);
+    }
+    
     private void DocumentComboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DocumentComboboxActionPerformed
         // TODO add your handling code here:
+        String selectedDocument = (String) DocumentCombobox.getSelectedItem();
+        switch (selectedDocument) {
+        case "Document":
+            break;
+        case "Quotation":
+            openQuotition();
+            break;
+        case "Recipt":
+            openReceipt();
+            break;
+        default:
+            break;
+    }
     }//GEN-LAST:event_DocumentComboboxActionPerformed
 
     private void jButtonProjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProjectActionPerformed
         // TODO add your handling code here:
+        Project registerForm = new Project();
+        registerForm.setVisible(true);
+        jButtonProject.addActionListener(new Project());
+        dispose();
     }//GEN-LAST:event_jButtonProjectActionPerformed
 
     private void jbuttonReportingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbuttonReportingActionPerformed
         // TODO add your handling code here:
+        Report registerForm = new Report();
+        registerForm.setVisible(true);
+        jbuttonReporting.addActionListener(new Project());
+        dispose();
     }//GEN-LAST:event_jbuttonReportingActionPerformed
 
     private void jButtonUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUserActionPerformed
@@ -553,6 +586,12 @@ public class Project extends javax.swing.JFrame {
 
     private void jButtonTaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTaxActionPerformed
         // TODO add your handling code here:
+        TaxCalculate registerForm = new TaxCalculate();
+        registerForm.setVisible(true);
+        jButtonTax.addActionListener(new Project());
+        TaxCalculate tx = new TaxCalculate();
+        tx.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButtonTaxActionPerformed
 
     private void jButtonSettingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSettingActionPerformed
@@ -561,6 +600,10 @@ public class Project extends javax.swing.JFrame {
 
     private void jButtonHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHomeActionPerformed
         // TODO add your handling code here:
+        Home registerForm = new Home();
+        registerForm.setVisible(true);
+        jButtonHome.addActionListener(new Project());
+        dispose();
     }//GEN-LAST:event_jButtonHomeActionPerformed
 
     private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
@@ -641,5 +684,10 @@ public class Project extends javax.swing.JFrame {
     private javax.swing.JButton jbuttonReporting;
     private javax.swing.JLabel usethisDashboard;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
 }

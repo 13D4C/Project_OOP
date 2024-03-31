@@ -1,3 +1,5 @@
+package project;
+
 public class CheckFunction<t> {
     private t content;
     

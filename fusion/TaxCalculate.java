@@ -5,6 +5,8 @@
 package project;
 
 import com.formdev.flatlaf.FlatLightLaf;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.util.Calendar;
 import javax.swing.UIManager;
@@ -14,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author oatsu
  */
-public class TaxCalculate extends javax.swing.JFrame {
+public class TaxCalculate extends javax.swing.JFrame implements ActionListener{
 
     /**
      * Creates new form TaxCalculate
@@ -474,18 +476,56 @@ public class TaxCalculate extends javax.swing.JFrame {
 
     private void DocumentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DocumentActionPerformed
         // TODO add your handling code here:
+        String selectedDocument = (String) Document.getSelectedItem();
+        switch (selectedDocument) {
+        case "Document":
+            break;
+        case "Quotation":
+            openQuotition();
+            break;
+        case "Recipt":
+            openReceipt();
+            break;
+        default:
+            break;
+    }
     }//GEN-LAST:event_DocumentActionPerformed
-
+    
+    private void openQuotition() {
+        Quotition registerForm = new Quotition();
+        registerForm.setVisible(true);
+    }
+    private void openReceipt() {
+        Receipt registerForm = new Receipt();
+        registerForm.setVisible(true);
+    }
+    
     private void jButtonHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHomeActionPerformed
         // TODO add your handling code here:
+        Home registerForm = new Home();
+        registerForm.setVisible(true);
+        jButtonHome.addActionListener(new TaxCalculate());
+        dispose();
     }//GEN-LAST:event_jButtonHomeActionPerformed
 
     private void jButtonProjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProjectActionPerformed
         // TODO add your handling code here:
+        Project registerForm = new Project();
+        registerForm.setVisible(true);
+        jButtonProject.addActionListener(new TaxCalculate());
+        Project pj = new Project();
+        pj.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButtonProjectActionPerformed
 
     private void jButtonReportingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReportingActionPerformed
         // TODO add your handling code here:
+        Report pj = new Report();
+           Report registerForm = new Report();
+        registerForm.setVisible(true);
+        jButtonReporting.addActionListener(new TaxCalculate());
+        pj.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButtonReportingActionPerformed
 
     private void jButtonUsersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUsersActionPerformed
@@ -494,6 +534,10 @@ public class TaxCalculate extends javax.swing.JFrame {
 
     private void jButtonTaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTaxActionPerformed
         // TODO add your handling code here:
+        TaxCalculate registerForm = new TaxCalculate();
+        registerForm.setVisible(true);
+        jButtonTax.addActionListener(new TaxCalculate());
+        dispose();
     }//GEN-LAST:event_jButtonTaxActionPerformed
 
     private void jButtonSettingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSettingActionPerformed
@@ -644,4 +688,9 @@ public void showTax() {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JLabel usethisDashboard;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

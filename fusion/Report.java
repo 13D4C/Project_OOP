@@ -3,6 +3,8 @@ package project;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.time.LocalDate;
 import java.util.Calendar;  
@@ -26,7 +28,7 @@ import org.jfree.data.category.DefaultCategoryDataset;
  *
  * @author oatsu
  */
-public class Report extends javax.swing.JFrame {
+public class Report extends javax.swing.JFrame implements ActionListener{
 
     /**
      * Creates new form Report
@@ -39,15 +41,7 @@ public class Report extends javax.swing.JFrame {
         showExpense();
         showTable();
     }
-    private void openQuotition() {
-    Quotition registerForm = new Quotition();
-    registerForm.setVisible(true);
-    }
 
-private void openReceipt() {
-    Receipt registerForm = new Receipt();
-    registerForm.setVisible(true);
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -689,14 +683,41 @@ private void openReceipt() {
 
     private void DocumentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DocumentActionPerformed
         // TODO add your handling code here:
+        String selectedDocument = (String) Document.getSelectedItem();
+        switch (selectedDocument) {
+        case "Document":
+            break;
+        case "Quotation":
+            openQuotition();
+            break;
+        case "Recipt":
+            openReceipt();
+            break;
+        default:
+            break;
+    }
     }//GEN-LAST:event_DocumentActionPerformed
+    private void openQuotition() {
+        Quotition registerForm = new Quotition();
+        registerForm.setVisible(true);
+    }
 
+    private void openReceipt() {
+        Receipt registerForm = new Receipt();
+        registerForm.setVisible(true);
+    }
     private void jButtonUsersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUsersActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonUsersActionPerformed
 
     private void jButtonTaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTaxActionPerformed
         // TODO add your handling code here:
+        TaxCalculate registerForm = new TaxCalculate();
+        registerForm.setVisible(true);
+        jButtonTax.addActionListener(new Report());
+        TaxCalculate tx = new TaxCalculate();
+        tx.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButtonTaxActionPerformed
 
     private void jButtonProjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProjectActionPerformed
@@ -704,6 +725,7 @@ private void openReceipt() {
           Project registerForm = new Project();
         registerForm.setVisible(true);
         jButtonProject.addActionListener(new Report());
+        dispose();
     }//GEN-LAST:event_jButtonProjectActionPerformed
 
     private void jButtonHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHomeActionPerformed
@@ -711,6 +733,7 @@ private void openReceipt() {
         Home registerForm = new Home();
         registerForm.setVisible(true);
         jButtonHome.addActionListener(new Report());
+        dispose();
     }//GEN-LAST:event_jButtonHomeActionPerformed
 
     private void jButtonReportingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReportingActionPerformed
@@ -718,6 +741,7 @@ private void openReceipt() {
         Report registerForm = new Report();
         registerForm.setVisible(true);
         jButtonReporting.addActionListener(new Report());
+        dispose();
     }//GEN-LAST:event_jButtonReportingActionPerformed
 
     private void jButtonSettingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSettingActionPerformed
@@ -983,4 +1007,9 @@ private String getLastYearExpense(String name, int lastYear) {
     private javax.swing.JTable jTable2;
     private javax.swing.JLabel usethisDashboard;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

@@ -151,11 +151,12 @@ public class DBConnect {
         return null;
     }
     
-    public void getNewUser(String sql, String name, String pass) {
+    public void getNewUser(String sql, String name, String pass, String role) {
         try {
             preS = con.prepareStatement(sql);
             preS.setString(1, name);
             preS.setString(2, pass);
+            preS.setString(3, role);
             preS.executeUpdate();
             System.out.println("Sucessfully Selected!");
         }

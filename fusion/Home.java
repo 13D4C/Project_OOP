@@ -6,6 +6,8 @@ package project;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.sql.ResultSet;
@@ -24,7 +26,7 @@ import org.jfree.data.general.DefaultPieDataset;
  *
  * @author aruch
  */
-public class Home extends javax.swing.JFrame implements WindowListener {
+public class Home extends javax.swing.JFrame implements WindowListener ,ActionListener {
 
     /**
      * Creates new form Homee
@@ -756,6 +758,12 @@ private void openReceipt() {
 
     private void jButtonTaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTaxActionPerformed
         // TODO add your handling code here:
+        TaxCalculate registerForm = new TaxCalculate();
+        registerForm.setVisible(true);
+        jButtonTax.addActionListener(new Home());
+        TaxCalculate tx = new TaxCalculate();
+        tx.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButtonTaxActionPerformed
 
     private void jButtonSettingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSettingActionPerformed
@@ -764,9 +772,10 @@ private void openReceipt() {
 
     private void jButtonHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHomeActionPerformed
         // TODO add your handling code here:
-         Home registerForm = new Home();
+        Home registerForm = new Home();
         registerForm.setVisible(true);
         jButtonHome.addActionListener(new Home());
+        dispose();
     }//GEN-LAST:event_jButtonHomeActionPerformed
 
     private void TextDarkblue13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextDarkblue13ActionPerformed
@@ -1019,4 +1028,9 @@ private void openReceipt() {
 
     @Override
     public void windowDeactivated(WindowEvent e) {}
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

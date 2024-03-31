@@ -1,5 +1,9 @@
 package project;
 
 public interface AddAble {
-    public void addNew();
+    public abstract void addName(String name);
+    
+    public abstract void addPassword(String password);
+    
+    public abstract void addPassword(int password);
 }

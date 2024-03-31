@@ -223,13 +223,14 @@ public class Register extends javax.swing.JFrame implements ActionListener{
         String name = jTextField4.getText();
         String email = jTextField3.getText();
         String pass = jTextField1.getText();
+        
         String passCon = jTextField2.getText();
         
         if (pass.equals(passCon)) {
             try {
                 DBConnect db = new DBConnect();
-                String sql = String.format("INSERT INTO login (Username, Password) VALUES (?, ?)\n");
-                db.getNewUser(sql, name, pass);
+                String sql = String.format("INSERT INTO login (Username, Password, Role) VALUES (?, ?,?)\n");
+                db.getNewUser(sql, name, pass,"");
                 db.disconnectPre();
                 JOptionPane.showMessageDialog(null, "Registration Sucessful!");
                 Login registerForm = new Login();
