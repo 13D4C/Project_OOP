@@ -1,13 +1,15 @@
 package ooppart;
+
+
 public class Project {
     private String name;
     private Employee employee;
     private String customerName;
     private double price;
     
-    public Project(String name,String employee, double price) {
+    public Project(String name,String employee, String role, double price) {
         this.name = name;
-        this.employee = new Employee(employee);
+        this.employee = new Employee(employee, role);
         this.price = price;
     }
     public void setName(String name) {
@@ -18,8 +20,8 @@ public class Project {
         return this.name;
     }
     
-    public void setEmployee(String name) {
-        this.employee = new Employee(name);
+    public void setEmployee(String name, String role) {
+        this.employee = new Employee(name, role);
     }
         
     public Employee getEmployee() {
