@@ -10,7 +10,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author aruch
  */
-public class Receipt extends javax.swing.JFrame {
+public class Receipt extends javax.swing.JFrame implements AddAble {
 
     /**
      * Creates new form Receipt
@@ -620,4 +620,7 @@ public class Receipt extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JLabel usethisDashboard;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void addNew() {}
 }
