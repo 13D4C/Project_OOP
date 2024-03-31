@@ -226,6 +226,19 @@ public class DBConnect {
         return null;
     }
 
+    public ResultSet getProfit(String key, int year) {
+        try {
+            PreparedStatement preS = con.prepareStatement("SELECT income FROM profit WHERE profit_key = ? and year = ?");
+            preS.setString(1, key);
+            preS.setString(2, String.valueOf(year));
+            ResultSet resultSet = preS.executeQuery();
+            return resultSet;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+    
     public void updateReminder(String userKey, String reminderText) throws SQLException {
         try {
             String sql = "UPDATE quotation SET reminder = ? WHERE quotation_id = ?";
