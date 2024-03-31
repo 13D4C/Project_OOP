@@ -1,7 +1,7 @@
 package ooppart;
 import java.util.ArrayList;
 
-public class offer_price {
+public class Quotation {
     private String note;
     private Project project;
     private String status;
