@@ -576,10 +576,15 @@ public void showTax() {
             }
              MoneyToPaidLabel.setText(String.valueOf(tax));
         }
-        
+        CheckFunction<String> checkFunction = new CheckFunction<>();
+        checkFunction.setContent("Complete");
+        System.out.println("Function Status: " + checkFunction.getContent());
         
     } catch (Exception ex) {
         ex.printStackTrace();
+        CheckFunction<String> checkFunction = new CheckFunction<>();
+        checkFunction.setContent("Failed");
+        System.out.println("Function Status: " + checkFunction.getContent());
     }
 }
     
