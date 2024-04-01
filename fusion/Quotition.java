@@ -24,6 +24,7 @@ import com.itextpdf.layout.property.TextAlignment;
 import java.io.IOException;
 import javax.swing.*;
 import java.awt.*;
+import java.sql.ResultSet;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JTable;
 import javax.swing.table.TableModel;
@@ -806,10 +807,32 @@ public class Quotition extends javax.swing.JFrame implements ActionListener{
 
     private void savebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebuttonActionPerformed
         // TODO add your handling code here:
-        ziptext.getText();
-        nametext.getText();
-        projecttext.getText();
-        sellertext.getText();
+        String tel = ziptext.getText();
+        String customer = nametext.getText();
+        String proj_name = projecttext.getText();
+        String status = "unfinished";
+        String date = datetext.getText();
+        String respond = detailtext.getText();
+        
+        try {
+            DBConnect db = new DBConnect();
+            
+            boolean test = db.updateQuote(customer, tel, proj_name, status, UserDatabase.key);
+            boolean test2 = db.updateProject(customer, respond, proj_name, date, status, UserDatabase.key, tel);
+            
+            if (test & test2) {
+                CheckFunction<String> checkFunction = new CheckFunction<>();
+                checkFunction.setContent("Complete");
+                System.out.println("Function Status: " + checkFunction.getContent());
+            }
+        }
+        catch (Exception ex) {
+            ex.printStackTrace();
+            CheckFunction<String> checkFunction = new CheckFunction<>();
+            checkFunction.setContent("Failed");
+            System.out.println("Function Status: " + checkFunction.getContent());
+        }
+        
         String path = "Quotition.pdf";
         PdfWriter pdfWriter = null;
         try {

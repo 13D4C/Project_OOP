@@ -808,10 +808,30 @@ public class Receipt extends javax.swing.JFrame implements ActionListener{
 
     private void savebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebuttonActionPerformed
         // TODO add your handling code here:
-        ziptext.getText();
-        nametext.getText();
-        projecttext.getText();
-        sellertext.getText();
+        String tel = ziptext.getText();
+        String customer = nametext.getText();
+        String recp_name = projecttext.getText();
+        String status = "unfinished";
+        
+        try {
+            DBConnect db = new DBConnect();
+            
+            boolean test = db.updateQuote(customer, tel, recp_name, status, UserDatabase.key);
+            
+            if (test) {
+                CheckFunction<String> checkFunction = new CheckFunction<>();
+                checkFunction.setContent("Complete");
+                System.out.println("Function Status: " + checkFunction.getContent());
+            }
+        }
+        catch (Exception ex) {
+            ex.printStackTrace();
+            CheckFunction<String> checkFunction = new CheckFunction<>();
+            checkFunction.setContent("Failed");
+            System.out.println("Function Status: " + checkFunction.getContent());
+        }
+        
+        
         String path = "Receipt.pdf";
         PdfWriter pdfWriter = null;
         try {
