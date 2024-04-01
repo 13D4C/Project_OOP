@@ -151,12 +151,11 @@ public class DBConnect {
         return null;
     }
     
-    public void getNewUser(String sql, String name, String pass, String role) {
+    public void getNewUser(String sql, String name, String pass) {
         try {
             preS = con.prepareStatement(sql);
             preS.setString(1, name);
             preS.setString(2, pass);
-            preS.setString(3, role);
             preS.executeUpdate();
             System.out.println("Sucessfully Selected!");
         }
@@ -240,6 +239,61 @@ public class DBConnect {
         return null;
     }
     
+    public boolean updateQuote(String cus, String tel, String project, String status, String id) {
+        try {
+            String sql = "INSERT INTO quote (customer, telephone, project_name, status, quote_id) VALUES (?, ?, ?, ?, ?)";
+            PreparedStatement preS = con.prepareStatement(sql);
+            preS.setString(1, cus);
+            preS.setString(2, tel);
+            preS.setString(3, project);
+            preS.setString(4, status);
+            preS.setString(5, id);
+            preS.executeUpdate();
+            return true;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
+    
+    
+    public boolean updateReceipt(String cus, String tel, String receipt, String status, String id) {
+        try {
+            String sql = "INSERT INTO receipt (customer, telephone, receipt_name, status, receipt_id) VALUES (?, ?, ?, ?, ?)";
+            PreparedStatement preS = con.prepareStatement(sql);
+            preS.setString(1, cus);
+            preS.setString(2, tel);
+            preS.setString(3, receipt);
+            preS.setString(4, status);
+            preS.setString(5, id);
+            preS.executeUpdate();
+            return true;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
+    
+    
+    public boolean updateProject(String cus, String res, String project, String date, String status, String id, String tel) {
+        try {
+            String sql = "INSERT INTO project (Customer, Responsibility, ProjectName, Date_Project, Status, key_log, Telephone) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement preS = con.prepareStatement(sql);
+            preS.setString(1, cus);
+            preS.setString(2, res);
+            preS.setString(3, project);
+            preS.setString(4, date);
+            preS.setString(5, status);
+            preS.setString(6, id);
+            preS.setString(7, tel);
+            preS.executeUpdate();
+            return true;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
+    
     public void updateReminder(String userKey, String reminderText) throws SQLException {
         try {
             String sql = "UPDATE quotation SET reminder = ? WHERE quotation_id = ?";
@@ -255,7 +309,7 @@ public class DBConnect {
                 preS.close();
             }
         }
-}
+    }
     
     public void disconnectPre() {
         try {
