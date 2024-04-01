@@ -1,6 +1,3 @@
-package project;
-
-
 public abstract class User {
 
     private String username;
@@ -39,4 +36,7 @@ public abstract class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public abstract void displayUserInfo();
+    
 }
