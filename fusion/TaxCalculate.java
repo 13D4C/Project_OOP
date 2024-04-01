@@ -621,17 +621,19 @@ public void showTax() {
              MoneyToPaidLabel.setText(String.valueOf(tax));
         }
         CheckFunction<String> checkFunction = new CheckFunction<>();
+        CheckFunction<String> printFunction = new CheckFunction<>();
         checkFunction.setContent("Complete");
         System.out.println("Function Status: " + checkFunction.getContent());
-        stringBox.printContent("Print me!");
+        printFunction.printContent("Print me!");
         System.out.println(stringBox.getContent());
         
     } catch (Exception ex) {
         ex.printStackTrace();
         CheckFunction<String> checkFunction = new CheckFunction<>();
+        CheckFunction<String> printFunction = new CheckFunction<>();
         checkFunction.setContent("Failed");
         System.out.println("Function Status: " + checkFunction.getContent());
-        stringBox.printContent("Return!");
+        printFunction.printContent("Return!");
         System.out.println(stringBox.getContent());
     }
 }
