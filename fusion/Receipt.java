@@ -447,7 +447,7 @@ public class Receipt extends javax.swing.JFrame implements ActionListener{
         taxidlabel.setText("TaxID:");
 
         ziplabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        ziplabel.setText("Zip:");
+        ziplabel.setText("Tel:");
 
         officelabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         officelabel.setText("Office:");
@@ -808,6 +808,10 @@ public class Receipt extends javax.swing.JFrame implements ActionListener{
 
     private void savebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebuttonActionPerformed
         // TODO add your handling code here:
+        ziptext.getText();
+        nametext.getText();
+        projecttext.getText();
+        sellertext.getText();
         String path = "Receipt.pdf";
         PdfWriter pdfWriter = null;
         try {
