@@ -1,19 +1,24 @@
-package project;
+public class CheckFunction<T> {
+    private T content;
 
-public class CheckFunction<t> {
-    private t content;
-    
-    public void setContent(t content){
+    public void setContent(T content) {
         this.content = content;
     }
-    
-    public t getContent(){
+
+    public T getContent() {
         return content;
     }
     
+    public void printContent(T content) {
+        System.out.println("Content: " + content);
+    }
+
     public static void main(String[] args) {
-        CheckFunction<String> stringBox = new  CheckFunction<>();
+        CheckFunction<String> stringBox = new CheckFunction<>();
         stringBox.setContent("Complete");
         System.out.println("Status Function: " + stringBox.getContent());
+        stringBox.printContent("Print me!");
+        System.out.println(stringBox.getContent());
     }
 }
+
