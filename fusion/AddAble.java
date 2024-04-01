@@ -1,9 +1,11 @@
-package project;
-
 public interface AddAble {
-    public abstract void addName(String name);
-    
-    public abstract void addPassword(String password);
-    
-    public abstract void addPassword(int password);
+    void addName(String name);
+    void addPassword(String password);
+    void addPassword(int password);
+
+    // เพิ่มเมธอดที่รับค่า
+    default void addUserInfo(String name, String password) {
+        addName(name);
+        addPassword(password);
+    }
 }
