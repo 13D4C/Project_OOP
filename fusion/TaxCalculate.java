@@ -623,12 +623,16 @@ public void showTax() {
         CheckFunction<String> checkFunction = new CheckFunction<>();
         checkFunction.setContent("Complete");
         System.out.println("Function Status: " + checkFunction.getContent());
+        stringBox.printContent("Print me!");
+        System.out.println(stringBox.getContent());
         
     } catch (Exception ex) {
         ex.printStackTrace();
         CheckFunction<String> checkFunction = new CheckFunction<>();
         checkFunction.setContent("Failed");
         System.out.println("Function Status: " + checkFunction.getContent());
+        stringBox.printContent("Return!");
+        System.out.println(stringBox.getContent());
     }
 }
     
