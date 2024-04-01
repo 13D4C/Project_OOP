@@ -51,6 +51,19 @@ public class DBConnect {
         return "";
     }
 
+    public ResultSet getLogin(String key) {
+        try {
+            PreparedStatement preS = con.prepareStatement("SELECT * FROM login WHERE key_Login = ? ");
+            preS.setString(1, key);
+            ResultSet resultSet = preS.executeQuery();
+            return resultSet;
+        }
+        catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+    
     public String getName(String key) {
         try {
             preS = con.prepareStatement(String.format("SELECT Customer FROM project WHERE ID = '%s' ", key));
@@ -238,7 +251,7 @@ public class DBConnect {
         }
         return null;
     }
-    
+
     public boolean updateQuote(String cus, String tel, String project, String status, String id) {
         try {
             String sql = "INSERT INTO quote (customer, telephone, project_name, status, quote_id) VALUES (?, ?, ?, ?, ?)";
@@ -321,47 +334,3 @@ public class DBConnect {
         }
     }
 }
-
-/*
-        Connection connect = null;
-        PreparedStatement pre = null;
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/oop", "root", "1234");
-            String sql = "SELECT * FROM login WHERE Username = ? ";
-            pre = connect.prepareStatement(sql);
-            pre.setString(1, "admin");
-            System.out.println("Done it");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    public void disconnect() {
-        try {
-            pre.close();
-            con.close();
-        }
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-    public void getUpdate(String sql) {
-        try {
-            pre = con.createStatement();
-            pre.execute(sql);
-        }
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-    public ResultSet getConnect(String sql) {
-        try {
-            pre = con.createStatement();
-            rs = pre.executeQuery(sql);
-            System.out.println("Sucessfully Selected!");
-        }
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return rs;
-    }
-*/
