@@ -625,7 +625,7 @@ public void showTax() {
         checkFunction.setContent("Complete");
         System.out.println("Function Status: " + checkFunction.getContent());
         printFunction.printContent("Print me!");
-        System.out.println(stringBox.getContent());
+        System.out.println(printFunction.getContent());
         
     } catch (Exception ex) {
         ex.printStackTrace();
@@ -634,7 +634,7 @@ public void showTax() {
         checkFunction.setContent("Failed");
         System.out.println("Function Status: " + checkFunction.getContent());
         printFunction.printContent("Return!");
-        System.out.println(stringBox.getContent());
+        System.out.println(printFunction.getContent());
     }
 }
     
